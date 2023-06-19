@@ -31,7 +31,8 @@ class PostController extends Controller
     {
         $post = new Post();
         $post->name = $request->name;
-        $post->location = $request->city . ', ' . $request->country;
+        $post->city = $request->city;
+        $post->country = $request->country;
         $post->size = $request->size;
         $post->tags = $request->tags;
         $post->description = $request->description;
@@ -53,7 +54,8 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $post = Post::findorfail($id);
+        return view('edit', ['post' => $post]);
     }
 
     /**
@@ -61,7 +63,16 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $post = Post::findorfail($id);
+        $post->name = $request->name;
+        $post->city = $request->city;
+        $post->country = $request->country;
+        $post->size = $request->size;
+        $post->tags = $request->tags;
+        $post->description = $request->description;
+        $post->save();
+        $url = '/'.$id;
+        return redirect($url)->with('message', 'Post edited successfully!');
     }
 
     /**

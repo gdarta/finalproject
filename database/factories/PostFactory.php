@@ -18,7 +18,8 @@ class PostFactory extends Factory
     {
         return [
             'name' => $this->faker->sentence(),
-            'location' => $this->faker->city().', '.$this->faker->country(),
+            'city' => $this->faker->city(),
+            'country' => $this->faker->country(),
             'size' => 'M',
             'tags' => 'reindeer, snowman, wool, handmade',
             'description' => $this->faker->paragraph()

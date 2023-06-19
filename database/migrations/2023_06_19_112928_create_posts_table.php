@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('location');
+            $table->string('city');
+            $table->string('country');
             $table->string('size');
             $table->string('tags');
             $table->longText('description');

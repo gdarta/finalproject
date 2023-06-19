@@ -14,7 +14,7 @@
         <div class='all-posts'>
             @foreach ($posts as $post)
                 <h2><a href='./{{ $post->id }}'>{{ $post->name }}</a></h2>
-                <p><b>Location: </b>{{ $post->location }}</p>
+                <p><b>Location: </b>{{ $post->city }}, {{ $post->country }}</p>
                 <p><b>Description: </b>{{ $post->description }}</p>
             @endforeach
         </div>
