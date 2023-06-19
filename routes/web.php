@@ -1,18 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+//Routes for viewing all posts
+Route::redirect('/', 'posts');
+Route::resource('/posts', PostController::class);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Routes for viewing a single post
+Route::get('/{id}', [App\Http\Controllers\PostController::class, 'show']);
