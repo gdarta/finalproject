@@ -4,26 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Create new post</title>
+    <link rel="stylesheet" href="..\css\app.css">
 </head>
 
 <body>
-    <form method='POST' action='./store'>
-        @csrf
-        <label for='name'>Name: </label>
-        <input type='text' name='name' id='name'>
-        <p>Where are you?</p>
-        <label for='city'>City: </label>
-        <input type='text' name='city' id='city'><br>
-        <label for='country'>Country: </label>
-        <input type='text' name='country' id='country'> <br>
-        <label for='size'>Sweater size: </label>
-        <input type='text' name='size' id='size'> <br>
-        <label for='tags'>Tags: </label>
-        <input type='text' name='tags' id='tags'> <br>
-        <label for='description'>Description: </label>
-        <textarea name='description' id='description' placeholder='Write your description here...'></textarea> <br>
-        <button type='submit'>Save</button>
-    </form>
+    <div class="logo">
+        <p>HANG!</p>
+    </div>
+    <div id="post">
+        <form method='POST' action='./store'>
+            @csrf
+            <label for='name'><h2>Name:</h2></label>
+            <input type='text' name='name' id='name'>
+            <p><h1>Where are you?</h1></p>
+            <label for='city'><h2>City: </h2></label>
+            <input type='text' name='city' id='city'>
+            <label for='country'><h2>Country: </h2></label>
+            <input type='text' name='country' id='country'>
+            <label for="size"><h2>Sweater Size:</h2></label>
+            <select id="size" name="size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="extra-large">Extra Large</option>
+            </select>
+            <label for='tags'><h2>Tags: </h2></label>
+            <input type='text' name='tags' id='tags'>
+            <label for='description'><h2>Description:</h2> </label>
+            <textarea name='description' id='description' placeholder='Write your description here...'></textarea><br><br>
+            <button type='submit' class="button">Save</button>
+        </form>
+    </div>
 </body>
 
 </html>
