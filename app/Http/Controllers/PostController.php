@@ -29,14 +29,19 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $post = new Post();
-        $post->name = $request->name;
-        $post->city = $request->city;
-        $post->country = $request->country;
-        $post->size = $request->size;
-        $post->tags = $request->tags;
-        $post->description = $request->description;
-        $post->save();
+        $form = $request->validate([
+            'name' => 'required|min:3',
+            'country' => 'required',
+            'size' => 'required',
+            'description' => 'required'
+        ]);
+
+        $form['city'] = $request->city;
+        $form['tags'] = $request->tags;
+        $form['user_id'] = auth()->id();
+
+        Post::create($form);
+
         return redirect('/')->with('message', 'Post created successfully!');
     }
 
@@ -64,13 +69,23 @@ class PostController extends Controller
     public function update(Request $request, string $id)
     {
         $post = Post::findorfail($id);
-        $post->name = $request->name;
-        $post->city = $request->city;
-        $post->country = $request->country;
-        $post->size = $request->size;
-        $post->tags = $request->tags;
-        $post->description = $request->description;
-        $post->save();
+        //Make sure logged in user is owner
+        if($post->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
+
+        $form = $request->validate([
+            'name' => 'required|min:3',
+            'country' => 'required',
+            'size' => 'required',
+            'description' => 'required'
+        ]);
+
+        $form['city'] = $request->city;
+        $form['tags'] = $request->tags;
+        
+        $post->update($form);
+
         $url = '/'.$id;
         return redirect($url)->with('message', 'Post edited successfully!');
     }
