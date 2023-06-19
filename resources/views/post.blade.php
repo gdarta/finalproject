@@ -12,6 +12,7 @@
         <p><b>Location: </b>{{ $post->city }}, {{ $post->country }}</p>
         <p><b>Description: </b>{{ $post->description }}</p>
     </div>
+    @auth
     <a href='./{{ $post-> id }}/edit'>Edit this post</a>
 
     <form method='POST' action='./{{ $post->id }}'>
@@ -19,6 +20,7 @@
         @method('DELETE')
         <button>Delete</button>
     </form>
+    @endauth
 </body>
 
 </html>
