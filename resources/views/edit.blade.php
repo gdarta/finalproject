@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit: {{ $post->name }}</title>
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="../css/app.css">
 </head>
 
 <body>
