@@ -19,5 +19,8 @@ Route::get('/{id}/edit', [App\Http\Controllers\PostController::class, 'edit']);
 //Update post
 Route::put('/{id}/update', [App\Http\Controllers\PostController::class, 'update']);
 
+//Delete post
+Route::delete('/{id}', [App\Http\Controllers\PostController::class, 'destroy']);
+
 //Store post
 Route::post('/store', [App\Http\Controllers\PostController::class, 'store']);

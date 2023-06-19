@@ -13,6 +13,12 @@
         <p><b>Description: </b>{{ $post->description }}</p>
     </div>
     <a href='./{{ $post-> id }}/edit'>Edit this post</a>
+
+    <form method='POST' action='./{{ $post->id }}'>
+        @csrf
+        @method('DELETE')
+        <button>Delete</button>
+    </form>
 </body>
 
 </html>
