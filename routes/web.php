@@ -3,9 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
-//Routes for viewing all posts
+//All posts
 Route::redirect('/', 'posts');
-Route::resource('/posts', PostController::class);
+Route::get('/posts', [App\Http\Controllers\PostController::class, 'index']);
 
-//Routes for viewing a single post
+//Create a new post
+Route::get('/create', [App\Http\Controllers\PostController::class, 'create']);
+
+//Single post
 Route::get('/{id}', [App\Http\Controllers\PostController::class, 'show']);
+
+//Store post
+Route::post('/store', [App\Http\Controllers\PostController::class, 'store']);

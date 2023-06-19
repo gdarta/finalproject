@@ -21,7 +21,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -29,7 +29,14 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = new Post();
+        $post->name = $request->name;
+        $post->location = $request->city . ', ' . $request->country;
+        $post->size = $request->size;
+        $post->tags = $request->tags;
+        $post->description = $request->description;
+        $post->save();
+        return redirect('/')->with('message', 'Post created successfully!');
     }
 
     /**
