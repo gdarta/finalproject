@@ -26,5 +26,10 @@ class DatabaseSeeder extends Seeder
         \App\Models\Post::factory(6)->create([
             'user_id' => $user->id
         ]);
+
+        \App\Models\Comment::factory(5)->create([
+            'user_id' => $user->id,
+            'post_id' => 1
+        ]);
     }
 }

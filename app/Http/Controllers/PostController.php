@@ -56,7 +56,8 @@ class PostController extends Controller
     public function show(string $id)
     {
         $post = Post::findorfail($id);
-        return view('post', ['post' => $post]);
+        $comments = $post->comments()->get()->sortDesc();
+        return view('post', ['post' => $post, 'comments' => $comments]);
     }
 
     /**

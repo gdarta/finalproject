@@ -31,9 +31,19 @@
         <p><b>Description: </b>{{ $post->description }}</p>
     </div>
     @auth
-    <br>
-    <button class="button"><a href='./{{ $post-> id }}/edit' style="color:black">Edit this post</a></button>
+    <form method="POST" action="./{{ $post->id }}/comment">
+        @csrf 
+        <textarea name='body' id='body' placeholder='Write your comment here...'></textarea><br><br>
+        <button type='submit' class="button">Comment</button>
+    </form>
     @endauth
+
+    @foreach ($comments as $comment)
+        <h3>{{ $comment->user->name }} said: <h3>
+        <p>{{ $comment->body }}</p>
+    @endforeach
+
+    
 </body>
 
 </html>
