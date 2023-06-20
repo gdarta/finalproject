@@ -76,3 +76,10 @@ a{
     text-align: center;
     font-size: 25px;
 }
+
+.tag{
+    color: black;
+    border: 5px outset red;
+    border-radius: 30px;
+    background-color: #b64f00;
+}
