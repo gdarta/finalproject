@@ -12,7 +12,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        //TODO: Add sort by functionality
+        $posts = Post::all()->sortDesc();
         return view('posts', compact('posts'));
     }
 

@@ -15,7 +15,18 @@
     </a>
     <h1>{{ $post->name }}</h1>
     <div class='single_post'>
+        @php
+            $tags = explode(",", $post->tags);
+        @endphp
+        <p><b>Owner: </b>{{ $post->user->name }}<p>
+        <p><b>Posted: </b>{{ $post->created_at }}</p>
         <p><b>Location: </b>{{ $post->city }}, {{ $post->country }}</p>
+        <div class="tags">
+        @foreach ($tags as $tag)
+            <a href="">{{ $tag }}</a>
+        @endforeach
+        </div>
+        <p><b>Size: </b>{{ $post->size }}</p>
         <p><b>Description: </b>{{ $post->description }}</p>
     </div>
     @auth

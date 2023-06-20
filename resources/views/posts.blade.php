@@ -30,9 +30,20 @@
     @else
         <div class='all-posts'>
             @foreach ($posts as $post)
+            @php
+                $tags = explode(",", $post->tags);
+            @endphp
                 <div class="post_display">
                     <h2><a href='./{{ $post->id }}' class="name_link">{{ $post->name }}</a></h2>
+                    <p><b>Owner: </b>{{ $post->user->name }}<p>
+                    <p><b>Posted: </b>{{ $post->created_at }}</p>
                     <p><b>Location: </b>{{ $post->city }}, {{ $post->country }}</p>
+                    <div class="tags">
+                    @foreach ($tags as $tag)
+                        <a href="">{{ $tag }}</a>
+                    @endforeach
+                    </div>
+                    <p><b>Size: </b>{{ $post->size }}</p>
                     <p><b>Description: </b>{{ $post->description }}</p>
                 </div>
             @endforeach

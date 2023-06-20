@@ -40,8 +40,11 @@ body {
 .logo{
     font-family: cursive;
     font-size: 50px;
-    color: red;
+    color: rgb(255, 0, 0);
     text-shadow: 2px 4px #000000;
+}
+a{
+    text-decoration: none;
 }
 .post_display{
     width: 80%;
