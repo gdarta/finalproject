@@ -11,6 +11,17 @@
     <div class="logo">
         <p>HANG!</p>
     </div>
+    @auth
+    <span>Welcome {{ auth()->user()->name }}!</span>
+    <a href='./posts/manage'>Manage your posts</a>
+    <form method='POST' action='./logout'>
+        @csrf
+        <button type='submit'>Logout</button>
+    </form>
+    @else
+    <a href='./register'>Register </a>
+    <a href='./login'>Login</a>
+    @endauth
     <h1>All posts</h1>
     @if (count($posts) == 0)
         <p class='error'>There are no records in the database!</p>

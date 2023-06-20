@@ -16,6 +16,7 @@
         <p><b>Location: </b>{{ $post->city }}, {{ $post->country }}</p>
         <p><b>Description: </b>{{ $post->description }}</p>
     </div>
+    @auth
     <br>
     <button class="button"><a href='./{{ $post-> id }}/edit'>Edit this post</a></button>
     <form method='POST' action='./{{ $post->id }}'>
@@ -23,6 +24,7 @@
         @method('DELETE')
         <button class="button">Delete post</button>
     </form>
+    @endauth
 </body>
 
 </html>

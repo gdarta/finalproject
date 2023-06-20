@@ -20,8 +20,10 @@ class PostFactory extends Factory
             'name' => $this->faker->sentence(),
             'city' => $this->faker->city(),
             'country' => $this->faker->country(),
-            'size' => 'M',
-            'tags' => 'reindeer, snowman, wool, handmade',
+            'size' => fake()->randomElement(['XS', 'S', 'M', 'L', 'XL', 'XXL']),
+            'tags' => implode(',', fake()->randomElements(
+                ['reindeer', 'snowman', 'wool', 'handmade', 'polyester', 'knit', 'crochet', 'santa claus', 'christmas tree']
+                , null)),
             'description' => $this->faker->paragraph()
         ];
     }
