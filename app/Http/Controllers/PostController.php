@@ -41,6 +41,10 @@ class PostController extends Controller
         $form['tags'] = $request->tags;
         $form['user_id'] = auth()->id();
 
+        if($request->hasFile('photo')) {
+            $form['photo'] = $request->file('photo')->store('photos', 'public');
+        }
+
         Post::create($form);
 
         return redirect('/')->with('message', 'Post created successfully!');
@@ -84,6 +88,10 @@ class PostController extends Controller
 
         $form['city'] = $request->city;
         $form['tags'] = $request->tags;
+
+        if($request->hasFile('photo')) {
+            $form['photo'] = $request->file('photo')->store('photos', 'public');
+        }
         
         $post->update($form);
 

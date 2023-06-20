@@ -18,6 +18,7 @@
         @php
             $tags = explode(",", $post->tags);
         @endphp
+        <img src="{{ $post->photo ? asset('storage/'.$post->photo) : asset('assets/images/no-image.jpg')}}">
         <p><b>Owner: </b>{{ $post->user->name }}<p>
         <p><b>Posted: </b>{{ $post->created_at }}</p>
         <p><b>Location: </b>{{ $post->city }}, {{ $post->country }}</p>

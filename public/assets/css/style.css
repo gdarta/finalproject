@@ -55,6 +55,12 @@ a{
     margin-right: auto;
 }
 
+.post_display img{
+    height: 300px;
+    width: auto;
+    object-fit: contain;
+}
+
 .name_link{
     text-decoration: none;
     color: rgb(179, 0, 0);
@@ -75,4 +81,10 @@ a{
     margin-bottom: auto;
     text-align: center;
     font-size: 25px;
+}
+
+.single_post img{
+    height: 300px;
+    width: auto;
+    object-fit: contain;
 }
