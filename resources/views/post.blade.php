@@ -23,7 +23,7 @@
         <p><b>Location: </b>{{ $post->city }}, {{ $post->country }}</p>
         <div class="tags">
         @foreach ($tags as $tag)
-            <a href="">{{ $tag }}</a>
+            <a href="" class="tag">{{ $tag }}</a>
         @endforeach
         </div>
         <p><b>Size: </b>{{ $post->size }}</p>
@@ -31,7 +31,7 @@
     </div>
     @auth
     <br>
-    <button class="button"><a href='./{{ $post-> id }}/edit'>Edit this post</a></button>
+    <button class="button"><a href='./{{ $post-> id }}/edit' style="color:black">Edit this post</a></button>
     <form method='POST' action='./{{ $post->id }}'>
         @csrf
         @method('DELETE')
