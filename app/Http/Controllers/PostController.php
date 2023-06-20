@@ -82,12 +82,11 @@ class PostController extends Controller
         $form = $request->validate([
             'name' => 'required|min:3',
             'country' => 'required',
+            'city' => 'required',
             'size' => 'required',
+            'tags' => 'required',
             'description' => 'required'
         ]);
-
-        $form['city'] = $request->city;
-        $form['tags'] = $request->tags;
 
         if($request->hasFile('photo')) {
             $form['photo'] = $request->file('photo')->store('photos', 'public');
@@ -95,7 +94,7 @@ class PostController extends Controller
         
         $post->update($form);
 
-        $url = '/'.$id;
+        $url = '/posts/'.$id;
         return redirect($url)->with('message', 'Post edited successfully!');
     }
 
@@ -104,8 +103,16 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
+        if($post->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
         $post = Post::findorfail($id);
         $post->delete();
-        return redirect('/')->with('message', 'Post deleted successfully!');
+        return redirect('/posts/manage')->with('message', 'Post deleted successfully!');
+    }
+
+    public function manage()
+    {
+        return view('manage', ['posts' => auth()->user()->posts()->get()]);
     }
 }

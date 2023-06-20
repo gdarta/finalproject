@@ -33,11 +33,6 @@
     @auth
     <br>
     <button class="button"><a href='./{{ $post-> id }}/edit' style="color:black">Edit this post</a></button>
-    <form method='POST' action='./{{ $post->id }}'>
-        @csrf
-        @method('DELETE')
-        <button class="button">Delete post</button>
-    </form>
     @endauth
 </body>
 
