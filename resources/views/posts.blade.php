@@ -18,15 +18,15 @@
     <a href='./posts/manage'>Manage your posts</a>
     <form method='POST' action='./logout'>
         @csrf
-        <button type='submit'>Logout</button>
+        <button type='submit' class="button">Logout</button>
     </form>
     @else
-    <a href='./register'>Register </a>
-    <a href='./login'>Login</a>
+    <a href='./register' class="button">Register </a>
+    <a href='./login' class="button">Login</a>
     @endauth
     <form action="./posts/" class="search">
         <input type="text" name="search" placeholder="Search Christmas sweaters..." >
-        <button type="submit">Search</button>
+        <button type="submit" class="button">Search</button>
     </form>
     <h1>All posts</h1>
     @if (count($posts) == 0)
