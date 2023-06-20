@@ -14,21 +14,21 @@
         </div>
     </a>
     @auth
-    <span>Welcome {{ auth()->user()->name }}!</span>
+    <span>Welcome {{ auth()->user()->name }}!</span><br>
     <a href='./posts/manage'>Manage your posts</a>
     <form method='POST' action='./logout'>
         @csrf
-        <button type='submit'>Logout</button>
+        <br><button type='submit' class="button">Logout</button>
     </form>
     @else
-    <a href='./register'>Register </a>
-    <a href='./login'>Login</a>
+    <a href='./register' class="button">Register </a>
+    <a href='./login' class="button">Login</a>
     @endauth
+    <br><h1>All posts</h1>
     <form action="./posts/" class="search">
         <input type="text" name="search" placeholder="Search Christmas sweaters..." >
-        <button type="submit">Search</button>
+        <button type="submit" class="button">Search</button>
     </form>
-    <h1>All posts</h1>
     @if (count($posts) == 0)
         <p class='error'>There are no records in the database!</p>
     @else
@@ -44,7 +44,7 @@
                     <p><b>Location: </b>{{ $post->city }}, {{ $post->country }}</p>
                     <div class="tags">
                     @foreach ($tags as $tag)
-                        <a href="./posts/?tag={{ $tag }}">{{ $tag }}</a>
+                       <a href="./posts/?tag={{ $tag }}" class="tag">{{ $tag }}</a>
                     @endforeach
                     </div>
                     <p><b>Size: </b>{{ $post->size }}</p>
@@ -54,7 +54,7 @@
         </div>
     @endif
     {{ $posts->links() }}
-    <a href='./create' class='button'>Create a new post</a>
+    <br><a href='./create' class='button'>Create a new post</a>
 </body>
 
 </html>

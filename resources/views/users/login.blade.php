@@ -18,19 +18,19 @@
         <form method='POST' action='./users/authenticate'>
             @csrf
             <!--TODO: add username authentication-->
-            <label for='email'>Enter your e-mail: </label>
+            <label for='email'><h2>Enter your e-mail: </h2></label>
             <input type='text' name='email' id='email' value="{{ old('email') }}"> <br>
             @error('email')
             <p class="error">{{ $message }}</p>
             @enderror
 
-            <label for='password'>Enter password: </label>
+            <label for='password'><h2>Enter password: </h2></label>
             <input type='text' name='password' id='password'> <br>
             @error('password')
             <p class="error">{{ $message }}</p>
             @enderror
 
-            <button type='submit'>Login</button>
+            <br><button type='submit' class="button">Login</button>
         </form>
     </div>
     <p>Are not registered? <a href='./register'>Register</a></p>
