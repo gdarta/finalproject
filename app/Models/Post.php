@@ -9,6 +9,24 @@ class Post extends Model
 {
     use HasFactory;
 
+    //Filter/search posts
+    public function scopeFilter($query, array $filters)
+    {
+        //TODO: Filter by size
+        if($filters['tag'] ?? false){
+            $query->where('tags', 'like', '%'.request('tag').'%');
+        }
+        /*
+        if($filters['search'] ?? false) {
+            $query->where('name', 'like', '%' . request('search') . '%')
+                ->orWhere('description', 'like', '%' . request('search') . '%')
+                ->orWhere('tags', 'like', '%' . request('search') . '%')
+                ->orWhere('city', 'like', '%' . request('search') . '%')
+                ->orWhere('country', 'like', '%' . request('search') . '%');
+        }
+        */
+    }
+
     //Relationship to User
     public function user()
     {

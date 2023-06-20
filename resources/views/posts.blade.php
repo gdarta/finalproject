@@ -24,6 +24,10 @@
     <a href='./register'>Register </a>
     <a href='./login'>Login</a>
     @endauth
+    <form action="./posts/" class="search">
+        <input type="text" name="search" placeholder="Search Christmas sweaters...">
+        <button type="submit">Search</button>
+    </form>
     <h1>All posts</h1>
     @if (count($posts) == 0)
         <p class='error'>There are no records in the database!</p>
@@ -40,7 +44,7 @@
                     <p><b>Location: </b>{{ $post->city }}, {{ $post->country }}</p>
                     <div class="tags">
                     @foreach ($tags as $tag)
-                        <a href="">{{ $tag }}</a>
+                        <a href="./posts/?tag={{ $tag }}">{{ $tag }}</a>
                     @endforeach
                     </div>
                     <p><b>Size: </b>{{ $post->size }}</p>
