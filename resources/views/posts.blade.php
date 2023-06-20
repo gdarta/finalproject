@@ -4,9 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link rel="stylesheet" href="../css/app.css">
 </head>
 
 <body>
+    <div class="logo">
+        <p>HANG!</p>
+    </div>
     @auth
     <span>Welcome {{ auth()->user()->name }}!</span>
     <a href='./posts/manage'>Manage your posts</a>
@@ -24,9 +28,11 @@
     @else
         <div class='all-posts'>
             @foreach ($posts as $post)
-                <h2><a href='./{{ $post->id }}'>{{ $post->name }}</a></h2>
-                <p><b>Location: </b>{{ $post->city }}, {{ $post->country }}</p>
-                <p><b>Description: </b>{{ $post->description }}</p>
+                <div class="post_display">
+                    <h2><a href='./{{ $post->id }}' class="name_link">{{ $post->name }}</a></h2>
+                    <p><b>Location: </b>{{ $post->city }}, {{ $post->country }}</p>
+                    <p><b>Description: </b>{{ $post->description }}</p>
+                </div>
             @endforeach
         </div>
     @endif

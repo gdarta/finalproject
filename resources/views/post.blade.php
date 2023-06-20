@@ -4,21 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Post</title>
+    <link rel="stylesheet" href="../css/app.css">
 </head>
 
 <body>
+    <div class="logo">
+        <p>HANG!</p>
+    </div>
     <h1>{{ $post->name }}</h1>
-    <div class='single-post'>
+    <div class='single_post'>
         <p><b>Location: </b>{{ $post->city }}, {{ $post->country }}</p>
         <p><b>Description: </b>{{ $post->description }}</p>
     </div>
     @auth
-    <a href='./{{ $post-> id }}/edit'>Edit this post</a>
-
+    <br>
+    <button class="button"><a href='./{{ $post-> id }}/edit'>Edit this post</a></button>
     <form method='POST' action='./{{ $post->id }}'>
         @csrf
         @method('DELETE')
-        <button>Delete</button>
+        <button class="button">Delete post</button>
     </form>
     @endauth
 </body>
