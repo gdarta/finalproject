@@ -8,9 +8,11 @@
 </head>
 
 <body>
-    <div class="logo">
-        <p>HANG!</p>
-    </div>
+    <a href="./">
+        <div class="logo">
+            <p>HANG!</p>
+        </div>
+    </a>
     <h1>{{ $post->name }}</h1>
     <div class='single_post'>
         <p><b>Location: </b>{{ $post->city }}, {{ $post->country }}</p>

@@ -8,9 +8,11 @@
 </head>
 
 <body>
-    <div class="logo">
-        <p>HANG!</p>
-    </div>
+    <a href="./">
+        <div class="logo">
+            <p>HANG!</p>
+        </div>
+    </a>
     @auth
     <span>Welcome {{ auth()->user()->name }}!</span>
     <a href='./posts/manage'>Manage your posts</a>

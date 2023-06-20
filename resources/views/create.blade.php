@@ -8,9 +8,11 @@
 </head>
 
 <body>
-    <div class="logo">
-        <p>HANG!</p>
-    </div>
+    <a href="./">
+        <div class="logo">
+            <p>HANG!</p>
+        </div>
+    </a>
     <div id="post">
         <form method='POST' action='./store'>
             @csrf
