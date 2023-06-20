@@ -25,7 +25,7 @@
     <a href='./login'>Login</a>
     @endauth
     <form action="./posts/" class="search">
-        <input type="text" name="search" placeholder="Search Christmas sweaters...">
+        <input type="text" name="search" placeholder="Search Christmas sweaters..." >
         <button type="submit">Search</button>
     </form>
     <h1>All posts</h1>
@@ -53,6 +53,7 @@
             @endforeach
         </div>
     @endif
+    {{ $posts->links() }}
     <a href='./create' class='button'>Create a new post</a>
 </body>
 
