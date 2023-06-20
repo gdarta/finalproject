@@ -41,9 +41,6 @@
 
             <div>
                 <span class="relative z-0 inline-flex shadow-sm rounded-md">
-                    {{-- Previous Page Link --}}
-                    
-
                     {{-- Pagination Elements --}}
                     @foreach ($elements as $element)
                         {{-- "Three Dots" Separator --}}
@@ -68,9 +65,6 @@
                             @endforeach
                         @endif
                     @endforeach
-
-                    {{-- Next Page Link --}}
-                   
                 </span>
             </div>
         </div>
