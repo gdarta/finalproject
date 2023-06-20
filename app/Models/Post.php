@@ -16,7 +16,7 @@ class Post extends Model
         if($filters['tag'] ?? false){
             $query->where('tags', 'like', '%'.request('tag').'%');
         }
-        /*
+        
         if($filters['search'] ?? false) {
             $query->where('name', 'like', '%' . request('search') . '%')
                 ->orWhere('description', 'like', '%' . request('search') . '%')
@@ -24,7 +24,7 @@ class Post extends Model
                 ->orWhere('city', 'like', '%' . request('search') . '%')
                 ->orWhere('country', 'like', '%' . request('search') . '%');
         }
-        */
+        
     }
 
     //Relationship to User

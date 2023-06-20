@@ -13,8 +13,7 @@ class PostController extends Controller
     public function index()
     {
         //TODO: Add sort by functionality
-        $posts = Post::latest()->filter(request(['tag']))->paginate(9); 
-        //$filtered = $posts->whereHas();
+        $posts = Post::latest()->filter(request(['tag', 'search']))->paginate(9); 
         return view('posts', compact('posts'));
     }
 
