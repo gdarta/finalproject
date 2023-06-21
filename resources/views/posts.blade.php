@@ -8,14 +8,6 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
     <a href="./">
         <div class="logo">
             <p>HANG!</p>
