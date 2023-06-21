@@ -100,9 +100,6 @@ a{
     font-family: cursive;
 }
 .lang{
-    color: aqua;
+    color: rgb(253, 81, 37);
     text-decoration: none;
-}
-.navbar{
-    background-color: red;
 }
