@@ -10,7 +10,7 @@
 <body>
     <div class="navbar sticky">
         <ul>
-            <li class="logo left">HANG!</li>
+            <li id="logo" class="logo left"><a href="{{ route('posts.index') }}">HANG!</a></li>
             <li class="left"><a href="{{ route('posts.create') }}">{{ __('msg.create_a_new_post')}}</a></li>
 
             <li><a href="locale/en" class="lang">English</a></li>
