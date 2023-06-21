@@ -3,10 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LocaleController;
 
 //All posts
-Route::redirect('/', 'posts');
-Route::get('/posts', [App\Http\Controllers\PostController::class, 'index']);
+Route::redirect('/', 'posts.index');
+Route::get('/posts', [App\Http\Controllers\PostController::class, 'index'])->name('posts.index');
 
 //Create a new post
 Route::get('/posts/create', [App\Http\Controllers\PostController::class, 'create'])->middleware('auth');

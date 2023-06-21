@@ -16,15 +16,15 @@
             <li></li>
         </ul>
     </div>
-    <a href="./">
-        <div class="logo">
-            <p>HANG!</p>
-        </div>
-        <div>
-            <a href="locale/en" class="lang">English</a>
-            <a href="locale/lv" class="lang">Latvian</a>
-        </div><br><br>
-    </a>
+
+    <div class="logo">
+        <p>HANG!</p>
+    </div>
+
+    <div>
+        <a href="locale/en" class="lang">English</a>
+        <a href="locale/lv" class="lang">Latvian</a>
+    </div><br><br>
     @auth
     <span>{{ __('msg.welcome')}} {{ auth()->user()->name }}!</span><br>
     <a href='./posts/manage'>{{ __('msg.manage_your_posts')}}</a>
