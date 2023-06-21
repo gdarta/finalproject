@@ -56,8 +56,8 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        $post = Post::findorfail($id);
-        $comments = Comment::latest()->paginate(5);
+        $post = Post::findorfail($id); 
+        $comments = Comment::where('post_id','=',$post->id)->latest()->paginate(5); 
         return view('post', ['post' => $post, 'comments' => $comments]);
     }
 

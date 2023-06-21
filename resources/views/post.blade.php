@@ -38,16 +38,15 @@
     </form>
     @endauth
 
+    @if (count($comments) == NULL)
+        <p>Be the first to comment...</p>
+    @else
     @foreach ($comments as $comment)
         <h3>{{ $comment->user->name }} said: <h3>
         <p>{{ $comment->body }}</p>
     @endforeach
     {{ $comments->links() }}
-
-    @auth
-    <br>
-    <button class="button"><a href='./{{ $post-> id }}/edit' style="color:black">{{ __('msg.edit_this_post')}}</a></button>
-    @endauth
+    @endif
 </body>
 
 </html>
