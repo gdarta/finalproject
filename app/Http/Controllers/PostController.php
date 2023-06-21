@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -56,7 +57,7 @@ class PostController extends Controller
     public function show(string $id)
     {
         $post = Post::findorfail($id);
-        $comments = $post->comments()->get()->sortDesc();
+        $comments = Comment::latest()->paginate(5);
         return view('post', ['post' => $post, 'comments' => $comments]);
     }
 

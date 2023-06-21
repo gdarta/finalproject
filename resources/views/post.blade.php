@@ -42,6 +42,7 @@
         <h3>{{ $comment->user->name }} said: <h3>
         <p>{{ $comment->body }}</p>
     @endforeach
+    {{ $comments->links() }}
 
     
 </body>
