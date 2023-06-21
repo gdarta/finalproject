@@ -21,6 +21,9 @@ Route::get('/posts/{id}/edit', [App\Http\Controllers\PostController::class, 'edi
 //Update post
 Route::put('/posts/{id}/update', [App\Http\Controllers\PostController::class, 'update'])->middleware('auth');
 
+//Store comment
+Route::post('/posts/{id}/comment', [App\Http\Controllers\CommentController::class, 'store'])->middleware('auth');
+
 //Store post
 Route::post('/posts/store', [App\Http\Controllers\PostController::class, 'store'])->middleware('auth');
 

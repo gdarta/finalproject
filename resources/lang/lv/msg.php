@@ -37,7 +37,7 @@ return [
     'enter_password' => 'Ievadiet paroli',
     'confirm_password' => 'Apstipriniet paroli',
     'register' => 'Reģistrēties',
-    'already_registered' => 'Esat reģistrēts',
-    'are_not_registered' => 'Neesat reģistrēts'
+    'already_registered' => 'Esat reģistrēts?',
+    'are_not_registered' => 'Neesat reģistrēts?'
 ]
 ?>

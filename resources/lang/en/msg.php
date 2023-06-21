@@ -37,7 +37,7 @@ return [
     'enter_password' => 'Enter Password',
     'confirm_password' => 'Confirm Password',
     'register' => 'Register',
-    'already_registered' => 'Already Registered',
-    'are_not_registered' => 'Are Not Registered'
+    'already_registered' => 'Already Registered?',
+    'are_not_registered' => 'Are Not Registered?'
 ]
 ?>

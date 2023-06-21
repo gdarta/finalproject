@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Register</title>
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-</head>
-
-<body>
-    <a href="{{ route('posts.index') }}">
-        <div class="logo">
-            <p>HANG!</p>
-        </div>
-    </a>
+<x-layout>
     <h1>{{ __('msg.create_an_account_to_post_your_sweaters')}}</h1>
     <div id="post">
         <form method='POST' action='./users'>
@@ -50,7 +36,5 @@
             <br><button type='submit' class="button">{{ __('msg.register')}}</button>
         </form>
     </div>
-    <p>{{ __('msg.already_registered')}} <a href='./login'>{{ __('msg.login')}}</a></p>
-</body>
-
-</html>
+    <p>{{ __('msg.already_registered')}} <a class="user-link" href='./login'>{{ __('msg.login')}}</a></p>
+</x-layout>

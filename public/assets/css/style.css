@@ -14,6 +14,7 @@ body {
     margin-bottom: auto;
     text-align: center;
     color: rgb(138, 0, 0);
+    padding:10px;
 }
 #description{
     height: 200px;
@@ -85,6 +86,7 @@ a:visited{
     margin-bottom: auto;
     text-align: center;
     font-size: 25px;
+    padding: 10px;
 }
 
 .single_post img{
@@ -98,8 +100,7 @@ a:visited{
     border: 5px outset red;
     border-radius: 30px;
     background-color: #b64f00;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 9px 9px;
     font-family: cursive;
 }
 .lang{
@@ -118,7 +119,7 @@ a:visited{
     margin: 0;
     padding: 0;  
     overflow: hidden;
-    background-color: #882a2a;
+    background-color: #ad2c2cdd;
 }
 
 .navbar li{
@@ -133,16 +134,19 @@ a:visited{
     text-decoration: none;
 }
 
+.navbar li a:hover{
+    background-color: #de626279;
+}
+
+#logo a{
+    padding: 2px 16px;
+}
+
 .navbar .left{
     float:left;
 }
 
-span{
-    float:right;
-    padding-right: 20px;
-    padding-top: 10px;
-    margin: 10px;
-}
+
 
 .logout{
     padding: 2px;
@@ -162,4 +166,8 @@ span{
     color: #000000;
     padding: 2px;
     font-family: cursive;
+}
+
+.user-link{
+    text-decoration: underline;
 }

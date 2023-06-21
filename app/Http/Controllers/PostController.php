@@ -48,7 +48,7 @@ class PostController extends Controller
 
         Post::create($form);
 
-        return redirect('/')->with('message', 'Post created successfully!');
+        return redirect(route('manage'))->with('message', 'Post created successfully!');
     }
 
     /**
@@ -115,6 +115,6 @@ class PostController extends Controller
 
     public function manage()
     {
-        return view('manage', ['posts' => auth()->user()->posts()->get()]);
+        return view('manage', ['posts' => auth()->user()->posts()->get()->sortDesc()]);
     }
 }
