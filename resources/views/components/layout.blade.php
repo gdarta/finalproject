@@ -25,8 +25,8 @@
             </form>
             <span><b>{{ __('msg.welcome')}} {{ auth()->user()->name }}!</b></span>
             @else
-                <li><a href='./register'>{{ __('msg.register')}}</a></li>
-                <li><a href='./login'>{{ __('msg.login')}}</a></li>
+                <li><a href="{{ route('register') }}">{{ __('msg.register')}}</a></li>
+                <li><a href="{{ route('login') }}">{{ __('msg.login')}}</a></li>
             </ul>
             </div>
             @endauth

@@ -25,7 +25,7 @@ Route::put('/posts/{id}/update', [App\Http\Controllers\PostController::class, 'u
 Route::post('/posts/store', [App\Http\Controllers\PostController::class, 'store'])->middleware('auth');
 
 //Show register form
-Route::get('/register', [App\Http\Controllers\UserController::class, 'create'])->middleware('guest');
+Route::get('/register', [App\Http\Controllers\UserController::class, 'create'])->middleware('guest')->name('register');
 
 //Create new user
 Route::post('/users', [App\Http\Controllers\UserController::class, 'store'])->middleware('guest');
