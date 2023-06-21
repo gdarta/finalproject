@@ -17,20 +17,21 @@
         <p><b>{{ __('msg.description')}}: </b>{{ $post->description }}</p>
     </div>
     @auth
-    <form method="POST" action="./{{ $post->id }}/comment">
-        @csrf 
-        <textarea name='body' id='body' placeholder='Write your comment here...'></textarea><br><br>
-        <button type='submit' class="button">Comment</button>
-    </form>
-    @endauth
-
-    @if (count($comments) == NULL)
-        <p>Be the first to comment...</p>
-    @else
-    @foreach ($comments as $comment)
-        <h3>{{ $comment->user->name }} said: <h3>
-        <p>{{ $comment->body }}</p>
-    @endforeach
-    {{ $comments->links() }}
-    @endif
+    <div style="border: 5px outset red; border-radius: 20px; width: 30%; margin-left: auto; margin-right: auto;">
+        <form method="POST" action="./{{ $post->id }}/comment">
+            @csrf 
+            <textarea name='body' id='body' placeholder='Write your comment here...'></textarea><br><br>
+            <button type='submit' class="button">Comment</button>
+        </form>
+            @endauth
+            @if (count($comments) == NULL)
+                <p>Be the first to comment...</p>
+            @else
+            @foreach ($comments as $comment)
+                <h3>{{ $comment->user->name }} said: </h3>
+                <p>{{ $comment->body }}</p>
+            @endforeach
+            {{ $comments->links() }}
+            @endif
+    </div>
 </x-layout>

@@ -14,8 +14,8 @@
         </div>
     </a>
     @auth
-    <span>{{ __('msg.welcome')}} {{ auth()->user()->name }}!</span><br>
-    <a href='./'>{{ __('msg.return')}}</a>
+    {{ __('msg.welcome')}} {{ auth()->user()->name }}!<br><br>
+    <a href='./' id="return_button">{{ __('msg.return')}}</a>
     <form method='POST' action='./logout'>
         @csrf
         <br><button type='submit' class="button">{{ __('msg.log_out')}}</button>
@@ -29,20 +29,22 @@
     @if (count($posts) == 0)
         <p class='error'>{{ __('msg.there_are_no_records_in_the_database')}}!</p>
     @else
-        <table class='manage-posts'>
+       <br><br><table class='manage-posts'>
             @foreach ($posts as $post)
             @php
                 $tags = explode(",", $post->tags);
             @endphp
-                <tr class="post_display">
-                    <h2><a href='{{ $post->id }}' class="name_link">{{ $post->name }}</a></h2>
+            <tr class="post_display">
+                <div style="border: 5px outset red; border-radius: 20px; width: 30%; margin-left: auto; margin-right: auto;">
+                    <h2><a href='{{ $post->id }}' class="name_link">{{ $post->name }}</a></h2> {{ $post->created_at }}<br>
                     <button class="button"><a href='./{{ $post-> id }}/edit' style="color:black">{{ __('msg.edit_this_post')}}</a></button>
                     <form method='POST' action='./{{ $post->id }}'>
                         @csrf
                         @method('DELETE')
                         <button class="button">{{ __('msg.delete_post')}}</button>
                     </form>
-                </tr>
+                </div>
+            </tr>
             @endforeach
         </table>
     @endif
