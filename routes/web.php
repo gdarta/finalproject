@@ -10,10 +10,10 @@ Route::redirect('/', 'posts.index');
 Route::get('/posts', [App\Http\Controllers\PostController::class, 'index'])->name('posts.index');
 
 //Create a new post
-Route::get('/posts/create', [App\Http\Controllers\PostController::class, 'create'])->middleware('auth');
+Route::get('/posts/create', [App\Http\Controllers\PostController::class, 'create'])->middleware('auth')->name('posts.create');
 
 //Manage listings
-Route::get('/posts/manage', [App\Http\Controllers\PostController::class, 'manage'])->middleware('auth');
+Route::get('/posts/manage', [App\Http\Controllers\PostController::class, 'manage'])->middleware('auth')->name('manage');
 
 //Edit post
 Route::get('/posts/{id}/edit', [App\Http\Controllers\PostController::class, 'edit'])->middleware('auth');
@@ -31,22 +31,18 @@ Route::get('/register', [App\Http\Controllers\UserController::class, 'create'])-
 Route::post('/users', [App\Http\Controllers\UserController::class, 'store'])->middleware('guest');
 
 //Log user out
-Route::post('/logout', [App\Http\Controllers\UserController::class, 'logout'])->middleware('auth');
+Route::post('/logout', [App\Http\Controllers\UserController::class, 'logout'])->middleware('auth')->name('logout');
 
 //Show login form
 Route::get('/login', [App\Http\Controllers\UserController::class, 'login'])->name('login')->middleware('guest');
 
 //Authenticate/login user
-Route::post('/users/authenticate', [App\Http\Controllers\UserController::class, 'auth'])->middleware('guest');
+Route::post('/users/authenticate', [App\Http\Controllers\UserController::class, 'auth'])->middleware('guest')->name('users.authenticate');
 
 //Single post
 Route::get('/posts/{id}', [App\Http\Controllers\PostController::class, 'show']);
 
 //Delete post
 Route::delete('/posts/{id}', [App\Http\Controllers\PostController::class, 'destroy'])->middleware('auth');
-
-Route::get('/', function() {
-    return view('posts');
-});
 
 Route::get("locale/{lange}", [App\Http\Controllers\LocaleController::class, 'setLang']);

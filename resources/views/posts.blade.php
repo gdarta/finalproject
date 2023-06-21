@@ -1,42 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-</head>
-
-<body>
-    <div class="navbar">
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
-
-    <div class="logo">
-        <p>HANG!</p>
-    </div>
-
-    <div>
-        <a href="locale/en" class="lang">English</a>
-        <a href="locale/lv" class="lang">Latvian</a>
-    </div><br><br>
-    @auth
-    <span>{{ __('msg.welcome')}} {{ auth()->user()->name }}!</span><br>
-    <a href='./posts/manage'>{{ __('msg.manage_your_posts')}}</a>
-    <form method='POST' action='./logout'>
-        @csrf
-        <br><button type='submit' class="button">{{ __('msg.log_out')}}</button>
-    </form>
-    @else
-    <a href='./register' class="button">{{ __('msg.register')}}</a>
-    <a href='./login' class="button">{{ __('msg.login')}}</a>
-    @endauth
-    <br><h1>{{ __('msg.all_posts')}}</h1>
+<x-layout>
+    <br><a href="./posts"><h1>{{ __('msg.all_posts')}}</h1></a>
     <form action="./posts/" class="search">
         <input type="text" name="search" placeholder="Search Christmas sweaters..." >
         <button type="submit" class="button">{{ __('msg.search')}}</button>
@@ -67,7 +30,4 @@
         </div>
     @endif
     {{ $posts->links() }}
-    <br><a href='./create' class='button'>{{ __('msg.create_a_new_post')}}</a>
-</body>
-
-</html>
+</x-layout>

@@ -43,7 +43,7 @@ class UserController extends Controller
 
         //Login
         auth()->login($user);
-        return redirect('/')->with('message', 'User created and logged in!');
+        return redirect(route('posts.index'))->with('message', 'User created and logged in!');
     }
 
     /**
@@ -86,7 +86,7 @@ class UserController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/')->with('message', 'You have been logged out!');
+        return redirect(route('posts.index'))->with('message', 'You have been logged out!');
     }
 
     //Show login form
@@ -106,7 +106,7 @@ class UserController extends Controller
         if(auth()->attempt($form)){
             $request->session()->regenerate();
 
-            return redirect('/')->with('message', 'You are now logged in!');
+            return redirect(route('posts.index'))->with('message', 'You are now logged in!');
         }
 
         return back()->withErrors(['email' => 'Invalid credentials'])->onlyInput('email');

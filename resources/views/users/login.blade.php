@@ -8,14 +8,14 @@
 </head>
 
 <body>
-    <a href="./">
+    <a href="{{ route('posts.index') }}">
         <div class="logo">
             <p>HANG!</p>
         </div>
     </a>
     <h1>{{ __('msg.log_into_your_account_to_post_your_sweaters')}}</h1>
     <div id="post">
-        <form method='POST' action='./users/authenticate'>
+        <form method='POST' action="{{ route('users.authenticate') }}">
             @csrf
             <!--TODO: add username authentication-->
             <label for='email'><h2>{{ __('msg.enter_your_e-mail')}}: </h2></label>

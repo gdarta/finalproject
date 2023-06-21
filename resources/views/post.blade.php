@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Post</title>
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-</head>
-
-<body>
-    <a href="./">
-        <div class="logo">
-            <p>HANG!</p>
-        </div>
-    </a>
+<x-layout>
     <h1>{{ $post->name }}</h1>
     <div class='single_post'>
         @php
@@ -47,6 +33,4 @@
     @endforeach
     {{ $comments->links() }}
     @endif
-</body>
-
-</html>
+</x-layout>

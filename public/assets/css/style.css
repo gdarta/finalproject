@@ -47,6 +47,9 @@ body {
 a{
     text-decoration: none;
 }
+a:visited{
+    color:#000000;
+}
 .post_display{
     width: 80%;
     text-align: center;
@@ -102,4 +105,46 @@ a{
 .lang{
     color: rgb(253, 81, 37);
     text-decoration: none;
+}
+
+.sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}
+
+.navbar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;  
+    overflow: hidden;
+    background-color: #882a2a;
+}
+
+.navbar li{
+    float:right;
+}
+
+.navbar li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 28px 16px;
+    text-decoration: none;
+}
+
+.navbar .left{
+    float:left;
+}
+
+span{
+    float:right;
+    padding-right: 20px;
+    padding-top: 10px;
+    margin: 10px;
+}
+
+.logout{
+    float:right;
+    padding: 2px;
 }

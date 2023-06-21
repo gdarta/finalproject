@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <a href="./">
+    <a href="{{ route('posts.index') }}">
         <div class="logo">
             <p>HANG!</p>
         </div>
