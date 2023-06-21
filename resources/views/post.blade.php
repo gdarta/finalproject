@@ -19,16 +19,16 @@
             $tags = explode(",", $post->tags);
         @endphp
         <img src="{{ $post->photo ? asset('storage/'.$post->photo) : asset('assets/images/no-image.jpg')}}">
-        <p><b>Owner: </b>{{ $post->user->name }}<p>
-        <p><b>Posted: </b>{{ $post->created_at }}</p>
-        <p><b>Location: </b>{{ $post->city }}, {{ $post->country }}</p>
+        <p><b>{{ __('msg.owner')}}: </b>{{ $post->user->name }}<p>
+        <p><b>{{ __('msg.posted')}}: </b>{{ $post->created_at }}</p>
+        <p><b>{{ __('msg.location')}}: </b>{{ $post->city }}, {{ $post->country }}</p>
         <div class="tags">
         @foreach ($tags as $tag)
             <a href="" class="tag">{{ $tag }}</a>
         @endforeach
         </div>
-        <p><b>Size: </b>{{ $post->size }}</p>
-        <p><b>Description: </b>{{ $post->description }}</p>
+        <p><b>{{ __('msg.size')}}: </b>{{ $post->size }}</p>
+        <p><b>{{ __('msg.description')}}: </b>{{ $post->description }}</p>
     </div>
     @auth
     <form method="POST" action="./{{ $post->id }}/comment">
@@ -44,7 +44,10 @@
     @endforeach
     {{ $comments->links() }}
 
-    
+    @auth
+    <br>
+    <button class="button"><a href='./{{ $post-> id }}/edit' style="color:black">{{ __('msg.edit_this_post')}}</a></button>
+    @endauth
 </body>
 
 </html>

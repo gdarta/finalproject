@@ -14,20 +14,20 @@
         </div>
     </a>
     @auth
-    <span>Welcome {{ auth()->user()->name }}!</span><br>
-    <a href='./'>Return</a>
+    <span>{{ __('msg.welcome')}} {{ auth()->user()->name }}!</span><br>
+    <a href='./'>{{ __('msg.return')}}</a>
     <form method='POST' action='./logout'>
         @csrf
-        <br><button type='submit' class="button">Logout</button>
+        <br><button type='submit' class="button">{{ __('msg.log_out')}}</button>
     </form>
     @else
-    <a href='./register' class="button">Register </a>
-    <a href='./login' class="button">Login</a>
+    <a href='./register' class="button">{{ __('msg.register')}} </a>
+    <a href='./login' class="button">{{ __('msg.login')}}</a>
     @endauth
-    <br><h1>Manage posts</h1>
-    <br><a href='./create' class='button'>Create a new post</a>
+    <br><h1>{{ __('msg.manage_posts')}}</h1>
+    <br><a href='./create' class='button'>{{ __('msg.create_a_new_post')}}</a>
     @if (count($posts) == 0)
-        <p class='error'>There are no records in the database!</p>
+        <p class='error'>{{ __('msg.there_are_no_records_in_the_database')}}!</p>
     @else
         <table class='manage-posts'>
             @foreach ($posts as $post)
@@ -36,11 +36,11 @@
             @endphp
                 <tr class="post_display">
                     <h2><a href='{{ $post->id }}' class="name_link">{{ $post->name }}</a></h2>
-                    <button class="button"><a href='./{{ $post-> id }}/edit' style="color:black">Edit this post</a></button>
+                    <button class="button"><a href='./{{ $post-> id }}/edit' style="color:black">{{ __('msg.edit_this_post')}}</a></button>
                     <form method='POST' action='./{{ $post->id }}'>
                         @csrf
                         @method('DELETE')
-                        <button class="button">Delete post</button>
+                        <button class="button">{{ __('msg.delete_post')}}</button>
                     </form>
                 </tr>
             @endforeach

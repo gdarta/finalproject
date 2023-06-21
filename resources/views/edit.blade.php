@@ -17,25 +17,27 @@
         <form method='POST' action='./update'>
             @csrf
             @method('PUT')
-            <label for='name'><h2>Name:</h2></label>
+            <label for='name'><h2>{{ __('msg.name')}}:</h2></label>
                 <input type='text' name='name' id='name' value='{{ $post->name }}' >
-                <p><h1>Where are you?</h1></p>
-                <label for='city'><h2>City: </h2></label>
+                <p><h1>{{ __('msg.where_are_you')}}?</h1></p>
+                <label for='city'><h2>{{ __('msg.city')}}: </h2></label>
                 <input type='text' name='city' id='city' value='{{ $post->city }}'>
-                <label for='country'><h2>Country: </h2></label>
+                <label for='country'><h2>{{ __('msg.country')}}: </h2></label>
                 <input type='text' name='country' id='country' value='{{ $post->country }}'>
-                <label for="size"><h2>Sweater Size:</h2></label>
+                <label for="size"><h2>{{ __('msg.sweater_size')}}:</h2></label>
                 <select id="size" name="size" value='{{ $post->size }}'>
                     <option value="small">Small</option>
                     <option value="medium">Medium</option>
                     <option value="large">Large</option>
                     <option value="extra-large">Extra Large</option>
                 </select>
-                <label for='tags'><h2>Tags: </h2></label>
+                <label for='tags'><h2>{{ __('msg.tags')}}: </h2></label>
                 <input type='text' name='tags' id='tags' value='{{ $post->tags }}'>
-                <label for='description'><h2>Description:</h2> </label>
+                <label for='photo'><h2>{{ __('msg.upload_photo')}}: </h2></label>
+                <input type='file' name='photo' value ='{{ $post->photo }}'>
+                <label for='description'><h2>{{ __('msg.description')}}:</h2> </label>
                 <textarea name='description' id='description'>{{ $post->description }}</textarea><br><br>
-                <button type='submit' class="button">Save</button>
+                <button type='submit' class="button">{{ __('msg.save')}}</button>
         </form>
     </div>
 </body>

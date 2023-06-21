@@ -25,8 +25,6 @@ body {
     background-color: red;
     border: 5px outset red;
     border-radius: 30px;
-    height: 40px;
-    width: 80px;
     margin-bottom: 2px;
     font-weight: bold;
     text-decoration: none;
@@ -100,4 +98,11 @@ a{
     padding-left: 5px;
     padding-right: 5px;
     font-family: cursive;
+}
+.lang{
+    color: aqua;
+    text-decoration: none;
+}
+.navbar{
+    background-color: red;
 }
