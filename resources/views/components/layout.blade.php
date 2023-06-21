@@ -13,8 +13,8 @@
             <li id="logo" class="logo left"><a href="{{ route('posts.index') }}">HANG!</a></li>
             <li class="left"><a href="{{ route('posts.create') }}">{{ __('msg.create_a_new_post')}}</a></li>
 
-            <li><a href="locale/en" class="lang">English</a></li>
-            <li><a href="locale/lv" class="lang">Latviski</a></li>     
+            <li><a href="/finalproject/public/locale/en" class="lang">English</a></li>
+            <li><a href="/finalproject/public/locale/lv" class="lang">Latviski</a></li>     
             @auth
                 <li><a href="{{ route('manage') }}">{{ __('msg.manage_your_posts')}}</a></li>
             </ul>
@@ -24,8 +24,8 @@
                     <button type='submit' class="button">{{ __('msg.log_out')}}</button>
             </form>
             @else
-            <li><a href='./register'>{{ __('msg.register')}}</a></li>
-            <li><a href='./login'>{{ __('msg.login')}}</a></li>
+            <li><a href="{{ route('register') }}">{{ __('msg.register')}}</a></li>
+            <li><a href="{{ route('login') }}">{{ __('msg.login')}}</a></li>
         </ul>
     </div>
             @endauth

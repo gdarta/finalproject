@@ -38,6 +38,9 @@ return [
     'confirm_password' => 'Confirm Password',
     'register' => 'Register',
     'already_registered' => 'Already Registered?',
-    'are_not_registered' => 'Are Not Registered?'
+    'are_not_registered' => 'Are Not Registered?',
+    'search_sweaters' => 'Search sweaters...',
+    'said_comment' => 'said',
+    'write_comment' => 'Write your thoughts here...'
 ]
 ?>

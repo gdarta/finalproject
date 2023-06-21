@@ -20,14 +20,14 @@
     <div style="border: 5px outset red; border-radius: 20px; width: 30%; margin-left: auto; margin-right: auto; padding:10px;">
         <form method="POST" action="./{{ $post->id }}/comment">
             @csrf 
-            <textarea name='body' id='body' placeholder='Write your comment here...'></textarea><br><br>
+            <textarea name='body' id='body' placeholder="{{ __('msg.write_comment')}}"></textarea><br><br>
             <button type='submit' class="button">Comment</button>
         </form>
             @if (count($comments) == NULL)
                 <p>Be the first to comment...</p>
             @else
             @foreach ($comments as $comment)
-                <p><strong><i>{{ $comment->user->name }}</i> said: </strong> {{ $comment->body }}</p>
+                <p><strong><i>{{ $comment->user->name }}</i> {{ __('msg.said_comment')}}: </strong> {{ $comment->body }}</p>
             @endforeach
             {{ $comments->links() }}
             @endif

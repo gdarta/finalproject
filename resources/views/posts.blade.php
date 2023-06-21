@@ -1,7 +1,7 @@
 <x-layout>
     <br><a href="./posts"><h1>{{ __('msg.all_posts')}}</h1></a>
     <form action="./posts/" class="search">
-        <input type="text" name="search" placeholder="Search Christmas sweaters..." >
+        <input type="text" name="search" placeholder="{{ __('msg.search_sweaters')}}" >
         <button type="submit" class="button">{{ __('msg.search')}}</button>
     </form>
     @if (count($posts) == null)

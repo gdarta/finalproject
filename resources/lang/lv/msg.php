@@ -38,6 +38,9 @@ return [
     'confirm_password' => 'Apstipriniet paroli',
     'register' => 'Reģistrēties',
     'already_registered' => 'Esat reģistrēts?',
-    'are_not_registered' => 'Neesat reģistrēts?'
+    'are_not_registered' => 'Neesat reģistrēts?',
+    'search_sweaters' => 'Meklēt starp džemperiem...',
+    'said_comment' => 'teica',
+    'write_comment' => 'Raksti savu komentāru šeit...'
 ]
 ?>
