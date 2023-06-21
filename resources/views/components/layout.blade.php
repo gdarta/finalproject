@@ -18,17 +18,16 @@
             @auth
                 <li><a href="{{ route('manage') }}">{{ __('msg.manage_your_posts')}}</a></li>
             </ul>
-            </div>
+            <br><b>{{ __('msg.welcome')}} {{ auth()->user()->name }}!</b>
             <form class="logout" method='POST' action="{{ route('logout') }}">
                     @csrf
                     <button type='submit' class="button">{{ __('msg.log_out')}}</button>
             </form>
-            <span><b>{{ __('msg.welcome')}} {{ auth()->user()->name }}!</b></span>
             @else
-                <li><a href="{{ route('register') }}">{{ __('msg.register')}}</a></li>
-                <li><a href="{{ route('login') }}">{{ __('msg.login')}}</a></li>
-            </ul>
-            </div>
+            <li><a href='./register'>{{ __('msg.register')}}</a></li>
+            <li><a href='./login'>{{ __('msg.login')}}</a></li>
+        </ul>
+    </div>
             @endauth
         {{ $slot }}
     </body>
